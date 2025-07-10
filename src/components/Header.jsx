@@ -3,12 +3,12 @@ import { Hospital, PhoneCall} from 'lucide-react';
 import { Menu, X } from 'lucide-react';
 
 const navList = [
-    { name: '#home', path: 'Home'},
-    { name: '#services', path: 'Services'},
-    { name: '#about', path: 'About'},
-    { name: '#tips', path: 'Tips'},
-    { name: '#book', path: 'Book Appointment'},
-    { name: '#testimonials', path: 'Testimonials'},
+    { name: '#home', label: 'Home'},
+    { name: '#services', label: 'Services'},
+    { name: '#about', label: 'About'},
+    { name: '#tips', label: 'Tips'},
+    { name: '#book', label: 'Book Appointment'},
+    { name: '#testimonials', label: 'Testimonials'},
 ];
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className='scroll-mt-20 bg-blue-200 shadow-md sticky top-0 z-50'>
+        <header className='scroll-mt-20 bg-blue-50 shadow-md sticky top-0 z-50'>
             <div className='container mx-auto flex items-center justify-between py-4 px-4 lg:px-8'>
                 <div className='flex items-center space-x-2'>
                     <Hospital className='w-8 h-8 text-sky-800'/>
@@ -35,9 +35,9 @@ const Header = () => {
                    ))} 
                 </nav>
 
-                <div className='hidden md:flex items-center space-z-2'>
+                <div className='hidden md:flex items-center space-x-2'>
                     <PhoneCall className='text-sky-800'/>
-                    <a href="#" className='bg-sky-600 text-white px-4 rounded-xl hover:sky-700 transition text-sm'>
+                    <a href="#" className='bg-sky-600 text-white px-4 py-2 rounded-xl hover:sky-700 transition text-sm'>
                         Book Appointment
                     </a>
                 </div>
