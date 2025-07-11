@@ -28,7 +28,7 @@ const Header = () => {
                     <a 
                         href={link.href}
                         key={link.href}
-                        className="hover:text-sky-800 transition"
+                        className="hover:text-sky-800 transition cursor-pointer"
                     >
                         {link.label}
                     </a>
@@ -57,7 +57,7 @@ const Header = () => {
                             <a 
                                 href={link.href}
                                 key={link.href}
-                                className='block text-sky-800 transition'
+                                className='block text-sky-800 transition text-center cursor-pointer hover:text-sky-600'
                                 onClick={() => setIsMenuOpen(false)}>
                                 
                                 {link.label}
