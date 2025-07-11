@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Hospital, PhoneCall} from 'lucide-react';
+import { Smile, PhoneCall} from 'lucide-react';
 import { Menu, X } from 'lucide-react';
 
 const navList = [
@@ -19,7 +19,7 @@ const Header = () => {
         <header className='scroll-mt-20 bg-blue-50 shadow-md sticky top-0 z-50'>
             <div className='container mx-auto flex items-center justify-between py-4 px-4 lg:px-8'>
                 <div className='flex items-center space-x-2'>
-                    <Hospital className='w-8 h-8 text-sky-800'/>
+                    <Smile className='w-8 h-8 text-sky-800'/>
                     <span className='text-xl font-bold text-sky-800'>Smile Dental Clinic</span>
                 </div>
 
