@@ -26,8 +26,8 @@ const Header = () => {
                 <nav className='hidden md:flex space-x-6 text-gray-700 font-medium'>
                    {navList.map((link) => (
                     <a 
-                        href={link.href}
-                        key={link.href}
+                        href={link.name}
+                        key={link.name}
                         className="hover:text-sky-800 transition cursor-pointer"
                     >
                         {link.label}
@@ -55,8 +55,8 @@ const Header = () => {
                     <div className='md:hidden mg-white border-t border-gray-200 shadow-md px-4 space-y-3'>
                         {navList.map((link) => (
                             <a 
-                                href={link.href}
-                                key={link.href}
+                                href={link.name}
+                                key={link.name}
                                 className='block text-sky-800 transition text-center cursor-pointer hover:text-sky-600'
                                 onClick={() => setIsMenuOpen(false)}>
                                 
