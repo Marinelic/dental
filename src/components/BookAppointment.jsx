@@ -43,7 +43,7 @@ const BookAppointment = () => {
     const prevTab = () => setActiveTab(prev => prev - 1);
   
         return (
-            <div id='book' className='scroll-mt-20 min-h-screen bg-gradient-to-br from-sky-50 to-sky-100 py-12 px-4'>
+            <div id='book' className='scroll-m-20 min-h-screen bg-gradient-to-br from-sky-50 to-sky-100 py-12 px-4'>
                 <div className='max-w-4xl mx-auto'>
                     <div className='text-center mb-12'>
                         <h1 className='text-4xl font-bold text-sky-900 mb-3'>

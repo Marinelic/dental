@@ -3,6 +3,7 @@ import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
 import About from './components/About.jsx'
 import BookAppointment from './components/BookAppointment.jsx'
+import Footer from './components/Footer.jsx'
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Services />
       <About />
       <BookAppointment />
+      <Footer />
     </div>
   )
 }
