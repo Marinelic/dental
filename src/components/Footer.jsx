@@ -42,7 +42,7 @@ const contactinfo  = [
 
 const Footer = () => {
   return (
-    <footer className='bg-gradient-to-b from-blue-600 to-blue-900 text-white pt-16 pb-12 relative overflow-hidden'>
+    <footer className='bg-gradient-to-b from-blue-700 to-blue-900 text-white pt-16 pb-12 relative overflow-hidden'>
         <div className='absolute bottom-0 left-0 right-0 h-20 bg-cover opacity-20'></div>
 
         <div className='container mx-auto px-6 relative z-10'>

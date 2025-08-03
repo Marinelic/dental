@@ -8,7 +8,7 @@ const navList = [
     { name: '#about', label: 'About'},
     /* { name: '#tips', label: 'Tips'}, */
     { name: '#book', label: 'Book Appointment'},
-    { name: '#testimonials', label: 'Testimonials'},
+    /* { name: '#testimonials', label: 'Testimonials'}, */
 ];
 
 const Header = () => {
@@ -35,9 +35,9 @@ const Header = () => {
                    ))} 
                 </nav>
 
-                <div id='book' className='hidden md:flex items-center space-x-2'>
+                <div className='hidden md:flex items-center space-x-2'>
                     <PhoneCall className='text-sky-800'/>
-                    <a href="#" className='bg-sky-600 text-white px-4 py-2 rounded-xl hover:sky-700 transition text-sm'>
+                    <a id='book' className='bg-sky-600 text-white px-4 py-2 rounded-xl hover:sky-700 transition text-sm cursor-pointer'>
                         Book Appointment
                     </a>
                 </div>
