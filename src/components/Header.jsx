@@ -7,7 +7,7 @@ const navList = [
     { name: '#services', label: 'Services'},
     { name: '#about', label: 'About'},
     /* { name: '#tips', label: 'Tips'}, */
-    { name: '#book', label: 'Book Appointment'},
+    { name: '#appointment', label: 'Book Appointment'},
     /* { name: '#testimonials', label: 'Testimonials'}, */
 ];
 
@@ -16,7 +16,7 @@ const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     return (
-        <header className='scroll-mt-20 bg-white shadow-md sticky top-0 z-50'>
+        <header href="#book" className='scroll-mt-20 bg-white shadow-md sticky top-0 z-50'>
             <div className='container mx-auto flex items-center justify-between py-4 px-4 lg:px-8'>
                 <div className='flex items-center space-x-2'>
                     <Smile className='w-8 h-8 text-sky-800'/>
@@ -37,7 +37,7 @@ const Header = () => {
 
                 <div className='hidden md:flex items-center space-x-2'>
                     <PhoneCall className='text-sky-800'/>
-                    <a id='book' className='bg-sky-600 text-white px-4 py-2 rounded-xl hover:sky-700 transition text-sm cursor-pointer'>
+                    <a href='#appointment' className='bg-sky-600 text-white px-4 py-2 rounded-xl hover:sky-700 transition text-sm cursor-pointer'>
                         Book Appointment
                     </a>
                 </div>
