@@ -2,6 +2,7 @@ import React from 'react'
 import { FaSmileBeam, FaTooth, FaXRay } from 'react-icons/fa';
 import { GiToothbrush } from 'react-icons/gi';
 import { motion } from 'framer-motion';
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 
 const services = [
@@ -31,8 +32,13 @@ const services = [
 ];
 
 const Services = () => {
+
+     const [ref, visible] = useScrollReveal();
+
   return (
-    <section id='services' className='scroll-mt-20 py-24 bg-gradient-to-br from-white to-sky-100'>
+    <section id='services' ref={ref} className={`py-20 transition-all duration-1000 ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}>
         <div className='container mx-auto px-4'>
             <div className='text-center mb-16'>
                 <h2 className='text-4xl font-bold text-sky-900 mb-4'>

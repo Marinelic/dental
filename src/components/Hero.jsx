@@ -1,14 +1,43 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { CalendarCheck } from "lucide-react";
 import hero from "../assets/hero.png";
 
 const Hero = () => {
+  const [visible, setVisible] = useState(false);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (heroRef.current) observer.observe(heroRef.current);
+
+    return () => {
+      if (heroRef.current) observer.unobserve(heroRef.current);
+    };
+  }, []);
+
   return (
     <section
       id="home"
+      ref={heroRef}
       className="relative overflow-hidden bg-gradient-to-br from-sky-50 to-sky-100 py-20 flex items-center justify-center"
     >
-      <div className="container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10">
+      <div
+        className={`container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10 transition-all duration-1000 ${
+          visible
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
+        }`}
+      >
         {/* Text Section */}
         <div className="max-w-xl text-center lg:text-left space-y-6">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-sky-900 leading-tight">
@@ -30,7 +59,11 @@ const Hero = () => {
         </div>
 
         {/* Image Section */}
-        <div className="flex justify-center relative">
+        <div
+          className={`flex justify-center relative transition-all duration-1000 delay-200 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          }`}
+        >
           <div className="absolute -z-10 w-80 h-80 bg-sky-200/40 rounded-full blur-3xl top-10 right-10"></div>
           <img
             src={hero}

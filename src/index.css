@@ -54,3 +54,16 @@
 .animate-float-slower {
   animation: float-slower 12s ease-in-out infinite;
 }
+
+
+/* Smooth transitions for scroll reveal */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 1s ease;
+}
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+

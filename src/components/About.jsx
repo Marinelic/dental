@@ -1,11 +1,17 @@
 import React from 'react'
 import aboutImg from '../assets/about.png'
 import { FaUserMd } from 'react-icons/fa'
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const About = () => {
+
+  const [ref, visible] = useScrollReveal();
+
   return (
-    <section id='about' className='py-20 scroll-mt-20 bg-sky-100'>
-      <div className='container mx-auto px-4 flex flex-col-reverse lg:flex-row items-center gap-12'>
+    <section id='about' ref={ref} className='py-20 scroll-mt-20 bg-sky-100'>
+      <div className={`transition-all duration-1000 ${
+    visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+  }`}>
         <div className='w-full lg:w-1/2 flex justify-center'>
           <img src={aboutImg} alt="About" className='w-80 h-80 lg:w-[420px] lg:h-[420px] rounded-full object-cover shadow-md' />
         </div>
