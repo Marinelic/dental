@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { FaCalendar, FaChevronRight, FaClock, FaUser } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 import { GiToothbrush } from 'react-icons/gi';
+import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const BookAppointment = () => {
 
@@ -41,9 +42,13 @@ const BookAppointment = () => {
 
     const nextTab = () => setActiveTab(prev => prev + 1);
     const prevTab = () => setActiveTab(prev => prev - 1);
+
+    const [ref, visible] = useScrollReveal();
   
         return (
-            <div id='appointment' className='scroll-m-20 min-h-screen bg-gradient-to-br from-sky-50 to-sky-100 py-12 px-4'>
+            <div id='appointment' ref={ref} className={`scroll-m-20 min-h-screen bg-gradient-to-br from-sky-50 to-sky-100 py-12 px-4 transition-all duration-1000 ${
+                visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}>
                 <div className='max-w-4xl mx-auto'>
                     <div className='text-center mb-12'>
                         <h1 className='text-4xl font-bold text-sky-900 mb-3'>

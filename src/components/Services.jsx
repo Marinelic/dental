@@ -36,9 +36,7 @@ const Services = () => {
      const [ref, visible] = useScrollReveal();
 
   return (
-    <section id='services' ref={ref} className={`py-20 transition-all duration-1000 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}>
+    <section id='services' ref={ref} className='scroll-mt-20 py-24 bg-gradient-to-br from-white to-sky-100'>
         <div className='container mx-auto px-4'>
             <div className='text-center mb-16'>
                 <h2 className='text-4xl font-bold text-sky-900 mb-4'>
@@ -54,7 +52,7 @@ const Services = () => {
                 {services.map((service, index) => (
                     <motion.div 
                         key={index}
-                        className='bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all border border-sky-100 hover:border-sky-700'
+                        className='bg-blue-100 rounded-2xl p-6 shadow-md hover:shadow-lg transition-all border border-sky-100 hover:border-sky-700'
                         whileHover={{ scale: 1.05 }}
                         transition={{ duration: 0.3 }}>
 
