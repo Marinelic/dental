@@ -27,7 +27,7 @@ const Footer = () => {
   const [ref3, visible3] = useScrollReveal();
 
   return (
-    <footer className='bg-gradient-to-b from-blue-700 to-blue-900 text-white pt-16 pb-12 relative overflow-hidden'>
+    <footer id='footer' className='bg-gradient-to-b from-blue-700 to-blue-900 text-white pt-16 pb-12 relative overflow-hidden'>
         <div className='container mx-auto px-6 relative z-10'>
 
           {/* Logo + Social */}

@@ -55,17 +55,22 @@ const Hero = () => {
           </a>
         </div>
 
-        {/* Image Section */}
+
+        {/* Image Section with responsive shadow */}
         <div
-          className={`flex justify-center relative transition-all duration-1000 delay-200 ${
+          className={`relative flex justify-center transition-all duration-1000 delay-200 ${
             visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <div className="absolute -z-10 w-80 h-80 bg-sky-200/40 rounded-full blur-3xl top-10 right-10"></div>
+          {/* Soft shadow behind the image */}
+          <div className="absolute w-70 sm:w-95 h-50 sm:h-80 bg-sky-800 rounded-3xl blur-2xl sm:blur-3xl top-0"></div>
+
+          {/* Image */}
           <img
             src={hero}
             alt="Dental Clinic"
-            className="w-72 sm:w-80 lg:w-[400px] xl:w-[430px] rounded-3xl animate-float drop-shadow-xl"
+            className="w-72 sm:w-80 lg:w-[400px] xl:w-[430px] rounded-3xl animate-float
+                      shadow-[0_10px_15px_rgba(0,0,0,0.05)] sm:shadow-[0_20px_30px_rgba(0,0,0,0.15)]"
           />
         </div>
       </div>
