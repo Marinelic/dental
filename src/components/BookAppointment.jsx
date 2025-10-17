@@ -55,7 +55,9 @@ const BookAppointment = () => {
                             Book Your Smile
                         </h1>
 
-                        <p className='text-lg text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis culpa ab ad ratione doloribus natus.</p>
+                        <p className='text-lg text-gray-700'>
+                            Schedule your dental appointment in just a few easy steps.
+                        </p>
                     </div>
 
                     <div className='mb-12'>

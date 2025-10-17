@@ -12,7 +12,7 @@ const About = () => {
       ref={ref}
       className='py-20 scroll-mt-20 bg-sky-100 relative overflow-hidden'
     >
-      <div className={`container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
+      <div className={`container max-w-screen-xl mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center gap-12 transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}>
         
         {/* Image */}
         <div className='flex justify-center lg:justify-start lg:w-1/2 relative'>

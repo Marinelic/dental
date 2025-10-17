@@ -32,21 +32,18 @@ const Hero = () => {
       className="relative overflow-hidden bg-gradient-to-br from-sky-50 to-sky-100 py-20 flex items-center justify-center"
     >
       <div
-        className={`container mx-auto px-6 lg:px-16 flex flex-col-reverse lg:flex-row items-center justify-between gap-10 transition-all duration-1000 ${
-          visible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-10"
+        className={`container mx-auto px-6 md:px-10 lg:px-12 xl:px-16 flex flex-col-reverse lg:flex-row items-center justify-center gap-10 lg:gap-16 xl:gap-20 transition-all duration-1000 ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
         }`}
       >
         {/* Text Section */}
-        <div className="max-w-xl text-center lg:text-left space-y-6">
+        <div className="max-w-lg xl:max-w-xl text-center lg:text-left space-y-6">
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-sky-900 leading-tight">
             Brighten Your Smile <br /> with Expert Dental Care
           </h1>
 
           <p className="text-gray-700 text-base lg:text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed vel,
-            repellendus labore quas odio ad eligendi modi sint obcaecati harum.
+            We provide comprehensive dental services to keep your smile healthy and beautiful. From routine check-ups to advanced treatments, our experienced team is here to care for you.
           </p>
 
           <a
@@ -68,7 +65,7 @@ const Hero = () => {
           <img
             src={hero}
             alt="Dental Clinic"
-            className="w-80 lg:w-[430px] rounded-3xl animate-float drop-shadow-xl"
+            className="w-72 sm:w-80 lg:w-[400px] xl:w-[430px] rounded-3xl animate-float drop-shadow-xl"
           />
         </div>
       </div>
