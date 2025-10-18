@@ -5,8 +5,13 @@ import { FaCalendar, FaChevronRight, FaClock, FaUser } from 'react-icons/fa';
 import { FaPhone } from 'react-icons/fa';
 import { GiToothbrush } from 'react-icons/gi';
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 const BookAppointment = () => {
+
+    const [showSuccess, setShowSuccess] = useState(false);
+    const [showError, setShowError] = useState(false);
 
     const [activeTab, setActiveTab] = useState(1);
     const [formData, setFormData] = useState ({
@@ -44,6 +49,37 @@ const BookAppointment = () => {
     const prevTab = () => setActiveTab(prev => prev - 1);
 
     const [ref, visible] = useScrollReveal();
+
+           const sendEmail = (e) => {
+            e.preventDefault();
+
+            emailjs.send(
+                "service_kddj81h",
+                "template_j1vkxd8",
+                {
+                user_name: formData.name,
+                user_phone: formData.phone,
+                appointment_date: formData.date,
+                appointment_time: formData.time,
+                service: formData.service,
+                },
+                "Er5LdxIC8YQLHjyOB"
+            )
+            .then(
+                (result) => {
+                console.log(result.text);
+                setShowSuccess(true); // ✅ show success popup
+                setTimeout(() => setShowSuccess(false), 3000); // hide after 3s
+                },
+                (error) => {
+                console.error(error.text);
+                setShowError(true); // ❌ show error popup
+                setTimeout(() => setShowError(false), 3000);
+                }
+            );
+    };
+
+
   
         return (
             <div id='appointment' ref={ref} className={`scroll-m-20 min-h-screen bg-gradient-to-br from-sky-50 to-sky-100 py-12 px-4 transition-all duration-1000 ${
@@ -233,7 +269,10 @@ const BookAppointment = () => {
                                     </div>
                                 </div>
 
-                                <button className='w-full max-w-xs py-4 bg-gradient-to-br from-sky-500 to-sky-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105'>
+                                <button
+                                    onClick={sendEmail}
+                                    className="w-full max-w-xs py-4 bg-gradient-to-br from-sky-500 to-sky-600 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+                                    >
                                     Confirm & Book Appointment
                                 </button>
                             </div>
@@ -260,8 +299,48 @@ const BookAppointment = () => {
                         </div>
                     </div>
                 </div>
+
+                 {/* ✅ SUCCESS POPUP */}
+                    {showSuccess && (
+                        <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            className="bg-white p-8 rounded-3xl shadow-2xl text-center max-w-sm w-full"
+                        >
+                            <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">Appointment Sent!</h3>
+                            <p className="text-gray-500">Thank you, we’ll contact you soon to confirm your visit.</p>
+                        </motion.div>
+                        </div>
+                    )}
+
+                    {/* ❌ ERROR POPUP */}
+                    {showError && (
+                        <div className="fixed inset-0 flex items-center justify-center bg-black/40 z-50">
+                        <motion.div
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
+                            className="bg-white p-8 rounded-3xl shadow-2xl text-center max-w-sm w-full"
+                        >
+                            <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-800 mb-2">Something went wrong</h3>
+                            <p className="text-gray-500">Please try again or check your internet connection.</p>
+                        </motion.div>
+                        </div>
+                    )}
             </div>
-    );
-};
+        );
+    };
 
 export default BookAppointment

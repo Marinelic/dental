@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
 
               <h2 className='text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-sky-300 to-blue-200'>
-                BrightSmile
+                BlueSky Smile
               </h2>
             </div>
 
