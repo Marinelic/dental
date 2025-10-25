@@ -14,4 +14,4 @@ TECH STACK
 - Tailwind CSS
 - Forms: EmailJS
 
-Live Demo - https://dental-w4i6.vercel.app/
+Live Demo - https://dental-nh1v.vercel.app/
