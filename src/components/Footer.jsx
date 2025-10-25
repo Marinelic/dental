@@ -133,7 +133,7 @@ const Footer = () => {
 
           <div>
             <p className='text-center'>
-              &copy; {new Date().getFullYear()} Smile Dental Clinic. All rights reserved
+              &copy; {new Date().getFullYear()} BlueSky Dental Clinic. All rights reserved
             </p>
           </div>
         </div>
